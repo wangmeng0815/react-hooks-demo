@@ -68,7 +68,7 @@ const useCallBack = () => {
     }
 
     const handleClick3 = useCallback(() => {
-        setB(c + 1);
+        setC(c + 1);
     }, [c])
 
     return (
