@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    margin-top: 30px;
+}
+
+div, p {
+    font-size: 14px;
+}
+
+.outer_box{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.box{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    overflow: hidden;
+    /* width: 300px; */
+}
+
+.red {
+    color: red;
+}
+.blue{
+    color: blue;
+}
+.green{
+    color: green;
+}
+.container{
+    padding: 10px;
+}
+.label {
+    margin-right: 10px;
+}
+.title{
+    font-weight: bolder;
+    margin-right: 10px;
+}
+.nav {
+    margin-right: 10px;
+}
+.btn {
+    margin-right: 10px;
+}
+
+.btn_click{
+    height: 30px;
+}
