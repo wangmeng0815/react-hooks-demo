@@ -21,16 +21,13 @@ export default (props = {}) => {
     const [step, setStep] = useState(0);
     const [number, setNumber] = useState(0);
     const [count, setCount] = useState(0);
-    const temp1 = `1. 如果要使用创建的上下文，需要通过 Context.Provider 最外层包装组件，并且需要显示的通过 <TestContext.Provider value={{xx:xx}}> 的方式传入 value，指定 context 要对外暴露的信息。`;
-    const temp2 = `2. 一般的做法是将父组件的方法比如 setXXX 通过 props 的方式传给子组件，而一旦子组件多层级的话，就要层层透传。`;
-    const temp3 = `<Child step={step} number={number} count={count} />`;
 
     return (
         <TestContext.Provider value={{ setStep, setCount, setNumber, fetchData }}>
             <h3>useContext</h3>
-            <p>{ temp1 }</p>
-            <p>{ temp2 }</p>
-            <p>{ temp3 }</p>
+            <p>{ `1. 如果要使用创建的上下文，需要通过 Context.Provider 最外层包装组件，并且需要显示的通过 <TestContext.Provider value={{xx:xx}}> 的方式传入 value，指定 context 要对外暴露的信息。` }</p>
+            <p>2. 一般的做法是将父组件的方法比如 setXXX 通过 props 的方式传给子组件，而一旦子组件多层级的话，就要层层透传。</p>
+            <p>{ `<Child step={step} number={number} count={count} />` }</p>
             <Child step={step} number={number} count={count} />
         </TestContext.Provider>
     )

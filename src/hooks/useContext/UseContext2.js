@@ -27,14 +27,12 @@ const reducer = (state, action) => {
 export default (props = {}) => {
 
     const [state, dispatch] = useReducer(reducer, initState);
-    const temp1 = `const [state, dispatch] = useReducer(reducer, initState);`;
-    const temp2 = `<TestContext.Provider value={{ state, dispatch }}>`
 
     return (
         <TestContext.Provider value={{ state, dispatch }}>
             <h3>useContext + useReducer</h3>
-            <div className="red">{ temp1 }</div>
-            <div className="red">{ temp2 }</div>
+            <div className="red">{ `const [state, dispatch] = useReducer(reducer, initState);` }</div>
+            <div className="red">{ `<TestContext.Provider value={{ state, dispatch }}>` }</div>
             <button onClick={() => { dispatch({type: 'stepInc'}) }}>parent step ++</button>
             <Child />
         </TestContext.Provider>

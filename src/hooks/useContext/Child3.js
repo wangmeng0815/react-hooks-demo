@@ -14,9 +14,9 @@ export default memo( (props={}) => {
             <div>step is : {state.step} </div>
             <div>number is : {state.number} </div>
             <div>count is : {state.count} </div>
-            <div className="red">{ `在点击子组件的 【number + step】 按钮的时候, 虽然count的值没有发生任何变化， 但是一直触发re-render， 即使子组件是通过React.memo包装过的` }</div>
-            <div className="red">{ `出现这个问题的原因 是React.memo只会对props进行浅比较， 而通过Context我们直接将state注入到了组件内部，因此state的变化必然会触发re-render，整个state变化时绕过了memo` }</div>
-            <div className="red">{ `React.memo() 无法拦截注入到Context的state变化， 那就需要我们在组件内部进行更细粒度的性能优化 —— useMemo()` }</div>
+            <div className="red">在点击子组件的 【number + step】 按钮的时候, 虽然count的值没有发生任何变化， 但是一直触发re-render， 即使子组件是通过React.memo包装过的</div>
+            <div className="red">出现这个问题的原因 是React.memo只会对props进行浅比较， 而通过Context我们直接将state注入到了组件内部，因此state的变化必然会触发re-render，整个state变化时绕过了memo</div>
+            <div className="red">React.memo() 无法拦截注入到Context的state变化， 那就需要我们在组件内部进行更细粒度的性能优化 —— useMemo()</div>
             <div>
                 <button onClick={() => dispatch({ type: 'stepInc'})}>step ++</button>
                 <button onClick={() => dispatch({ type: 'numberInc'})}>number ++</button>

@@ -24,12 +24,11 @@ function A(props) {
 
 function B(props) {
     const { onClick, children } = props;
-    const strB = `<Bmemo onClick={ handleClick2 }>{b}</Bmemo>`;
     console.log('BBB', props)
     return (
         <div className="box" onClick={onClick}>
             <h3>B组件(对照组件)</h3>
-            <div>{ strB }</div>
+            <div>{ `<Bmemo onClick={ handleClick2 }>{b}</Bmemo>` }</div>
             <p className="red">应用了memo包裹组件后，尽管没有数据依赖更新，但是仍然每次会触发render</p>
             <h4 className="red">B组件绑定有onClick事件，所以尽管数据浅比较通过，但是onClick是一个引用，所以依然会触发重新渲染</h4>
             <div>b: {children}</div>
@@ -39,10 +38,10 @@ function B(props) {
 
 function Temp({ onClick, name }) {
     console.log('CCC');
-    const strC = `<C onClick={ handleClick3 } name={c} />`
     return (
         <div className="box" onClick={onClick}>
             <h3>memo + useCallback 组件</h3>
+            <div>{ `<C onClick={ handleClick3 } name={c} />` }</div>
             <div>c: {name}</div>
         </div>
 
