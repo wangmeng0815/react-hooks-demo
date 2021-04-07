@@ -38,9 +38,8 @@ const Test3 = () => {
 
     // * 传递一个依赖数组 -> 只有在数组内的state 改变时才会执行
     useEffect(() => {
-        console.log('ta来了~ta来了');
+        console.log('传递一个依赖数组: 只有在数组内的state 改变时才会执行');
     }, [ta]);
-
 
     // * useEffect的第二个参数，是一个数组，就像一个依赖列表。当状态值发生变化时我们才进行解绑。
     // * 所以当传空数组时，也就是当组件被销毁时才进行解绑 变相实现了componentWillUnmount的生命周期

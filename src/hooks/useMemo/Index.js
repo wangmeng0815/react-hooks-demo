@@ -4,7 +4,7 @@ import UseMemo from './UseMemo.js';
 
 const MemoChild = memo(Simple);
 const App = () => {
-    // ? 性能优化hooks: 父组件——memo、子组件——useMemo
+    // ? 性能优化hooks: memo、useMemo
     // * 在子组件不需要父组件的值和函数的情况下，只需要使用memo函数包裹子组件即可
     // * useMemo针对个别属性 刷新子组件
     const initialValue = 0;

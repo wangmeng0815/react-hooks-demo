@@ -13,7 +13,7 @@ import React, { memo, useState, useCallback } from 'react';
 
 function A(props) {
     const { onClick, children } = props;
-    console.log('AAA', props)
+    console.log('来自A组件', props)
     return (
         <div className="box" onClick={onClick}>
             <h3>A组件</h3>
@@ -24,7 +24,7 @@ function A(props) {
 
 function B(props) {
     const { onClick, children } = props;
-    console.log('BBB', props)
+    console.log('来自B组件', props)
     return (
         <div className="box" onClick={onClick}>
             <h3>B组件(对照组件)</h3>
@@ -37,7 +37,7 @@ function B(props) {
 }
 
 function Temp({ onClick, name }) {
-    console.log('CCC');
+    console.log('来自C组件');
     return (
         <div className="box" onClick={onClick}>
             <h3>memo + useCallback 组件</h3>
@@ -80,6 +80,7 @@ const useCallBack = () => {
                 <h4>4. 通过memo方法包裹组件， 并且通过useCallback包裹组件的onClick方法，memo与pureComponent类似（对传入组件的数据浅比较），useCallback则会保证handleClick不会发生变化</h4>
             </div>
             <A onClick={ handleClick1 }>{a}</A>
+            {/* <Bmemo>{b}</Bmemo> */}
             <Bmemo onClick={ handleClick2 }>{b}</Bmemo>
             <C onClick={ handleClick3 } name={c} />
         </>

@@ -27,7 +27,7 @@ const App = () => {
         }, 1000);
     }, []);
     useEffect(() => {
-        if (count > 10) {
+        if (count > 6) {
             clearInterval(timerID.current);
         }
     });
@@ -35,6 +35,8 @@ const App = () => {
     return (
         <>
             <h3>useRef</h3>
+            <div>它可以很方便地保存任何可变值，其类似于在 class 中使用实例字段的方式</div>
+            <div>{ `useRef() 和自建一个 {current: ...} 对象的唯一区别是，useRef 会在每次渲染时返回同一个 ref 对象。` }</div>
             <div>1. 传统用法： 获取对应的DOM对象</div>
             <div>2. “跨渲染周期” 保存数据</div>
             <button ref={counterRef} onClick={() => { setCount(count + 1) }}>Count: {count}, double: {doubleCount}</button>

@@ -21,7 +21,7 @@ export default memo( (props={}) => {
                 <button onClick={() => dispatch({ type: 'stepInc'})}>step ++</button>
                 <button onClick={() => dispatch({ type: 'numberInc'})}>number ++</button>
                 {/* // ! 直接使用父组件 state 带来的性能问题 */}
-                <button onClick={() => dispatch({ type: 'count'})}>count ++</button>
+                <button onClick={() => dispatch({ type: 'count'})}>number + step</button>
             </div>
         </div>
     )

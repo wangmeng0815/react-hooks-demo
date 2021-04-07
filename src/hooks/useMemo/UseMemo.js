@@ -6,7 +6,7 @@ const Temp = ({ count, items }) => {
     // * 使用useMemo对count进行包裹,这时候改变父组件items就不会导致count重新渲染了
 
     const changeEvent = (_count) => {
-        console.log('%cCount发生了变化', 'color: red;');
+        console.log('%c来自 useMemo中 Count发生了变化', 'color: red;');
         return _count + 1;
     }
 
